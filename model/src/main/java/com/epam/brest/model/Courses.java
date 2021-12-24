@@ -1,22 +1,22 @@
 package com.epam.brest.model;
 
 public class Courses {
-    private Integer courseId;
-    private String courseName;
+    private Integer coursesId;
+    private String coursesName;
 
-    public Integer getCourseId() {
-        return courseId;
+    public Integer getCoursesId() {
+        return coursesId;
     }
 
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
+    public void setCoursesId(Integer courseId) {
+        this.coursesId = courseId;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public String getCoursesName() {
+        return coursesName;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setCoursesName(String coursesName) {
+        this.coursesName = coursesName;
     }
 }
