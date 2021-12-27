@@ -1,31 +1,31 @@
 package com.epam.brest.dao;
 
-import com.epam.brest.model.Courses;
+import com.epam.brest.model.Course;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.sql.DataSource;
 import java.util.List;
 
-public class CoursesDaoJDBCImpl implements CoursesDao{
+public class CourseDaoJDBCImpl implements CourseDao {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    public CoursesDaoJDBCImpl(DataSource dataSource) {
+    public CourseDaoJDBCImpl(DataSource dataSource) {
         this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
     @Override
-    public List<Courses> findAll() {
+    public List<Course> findAll() {
         return null;
     }
 
     @Override
-    public Integer create(Courses courses) {
+    public Integer create(Course courses) {
         return null;
     }
 
     @Override
-    public Integer update(Courses courses) {
+    public Integer update(Course courses) {
         return null;
     }
 
