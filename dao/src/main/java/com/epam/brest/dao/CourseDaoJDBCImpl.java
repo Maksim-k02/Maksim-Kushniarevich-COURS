@@ -18,8 +18,8 @@ public class CourseDaoJDBCImpl implements CourseDao {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    private final String SQL_ALL_COURSES="select d.courseId, d.courseName from course d order by d.courseName";
-    private final String SQL_CREATE_COURSE="insert into course(courseName) values(:courseName)";
+    private final String SQL_ALL_COURSES="select d.course_id, d.course_name from course d order by d.course_name";
+    private final String SQL_CREATE_COURSE="insert into course(course_name) values(:courseName)";
 
     public CourseDaoJDBCImpl(DataSource dataSource) {
         this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
@@ -55,8 +55,8 @@ public class CourseDaoJDBCImpl implements CourseDao {
         @Override
         public Course mapRow(ResultSet resultSet, int rowNum) throws SQLException {
             Course course =  new Course();
-            course.setCourseId(resultSet.getInt("courseId"));
-            course.setCoursesName(resultSet.getString("courseName"));
+            course.setCourseId(resultSet.getInt("course_id"));
+            course.setCoursesName(resultSet.getString("course_name"));
             return course;
         }
     }

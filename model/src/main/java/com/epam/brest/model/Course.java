@@ -3,6 +3,7 @@ package com.epam.brest.model;
 public class Course {
     private Integer courseId;
     private String courseName;
+
     public Course(){
 
     }
@@ -31,4 +32,6 @@ public class Course {
     public void setCoursesName(String courseName) {
         this.courseName = courseName;
     }
+
+
 }
