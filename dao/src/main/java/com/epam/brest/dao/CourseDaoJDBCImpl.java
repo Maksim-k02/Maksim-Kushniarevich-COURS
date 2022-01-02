@@ -1,6 +1,8 @@
 package com.epam.brest.dao;
 
 import com.epam.brest.model.Course;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -16,6 +18,8 @@ import java.util.Locale;
 
 public class CourseDaoJDBCImpl implements CourseDao {
 
+    private final Logger logger = LogManager.getLogger(CourseDaoJDBCImpl.class);
+
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     private final String SQL_ALL_COURSES="select d.course_id, d.course_name from course d order by d.course_name";
@@ -27,11 +31,14 @@ public class CourseDaoJDBCImpl implements CourseDao {
 
     @Override
     public List<Course> findAll() {
+        logger.debug("Start: findAll()");
         return namedParameterJdbcTemplate.query(SQL_ALL_COURSES, new CourseRowMapper());
     }
 
     @Override
     public Integer create(Course course) {
+        logger.debug("Start: create()", course);
+
         SqlParameterSource sqlParameterSource =
                 new MapSqlParameterSource("courseName",course.getCourseName().toUpperCase());
         KeyHolder keyHolder =  new GeneratedKeyHolder();
